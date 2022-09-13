@@ -102,3 +102,16 @@ img{
     color: rgb(85, 85, 85);
     /* border-top: 1px solid ; */
 }
+
+
+
+@media only screen and (max-width: 1044px) {
+    .join-twitter{margin:0 auto;}
+    .hero-section .home-container .twitter-img {
+        max-width: 100%;
+        align-self: center;
+        margin:0 auto;
+}
+
+
+}
