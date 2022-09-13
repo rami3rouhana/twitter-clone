@@ -8,6 +8,7 @@ let signUpModal= document.getElementById("sign-up-modal")
 signInButton.onclick = function() {
     signInModal.style.display = "block"; //display the sign in form as modal
 }
+// when sign up button clicked
 signUpButton.onclick = function() {
     signUpModal.style.display = "block"; //display the sign in form as modal
 }
