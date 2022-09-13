@@ -124,7 +124,17 @@ img{
     background-color: rgb(0, 0, 0);/* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);/* Black w/ opacity */
 }
+.login-section .signin-form{
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    align-items: center;
+    max-width: 30rem;
+    margin: 0 auto;
+    border-radius: 1rem;
+    
 
+}
 .login-section img{
     max-width: 3rem;
     height: auto;
