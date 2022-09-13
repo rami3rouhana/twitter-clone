@@ -29,6 +29,7 @@ html,body { height:100%; }
 .twitter-logo{
     width: 60px;
     height: 35px;
+    margin-left: 20px;
 }
 
 .twitter-logo:hover{
@@ -69,6 +70,15 @@ svg{
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    margin-bottom: 20px;
+}
+
+#tweet{
+    background-color: rgb(29, 155, 240);;
+    color: white;
+    width: 50%;
+    margin-top: 10px;
+    padding: 20px 20px 20px 20px;
 }
 
 .navbar-bottom-profile{
@@ -98,6 +108,7 @@ svg{
 }
 
 .settings{
+    font-weight: bold;
     font-size: x-large;
 }
 
