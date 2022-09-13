@@ -3,6 +3,7 @@
 *{
     margin:0;
     padding: 0;
+    font-family:'Nunito Sans',sans-serif ;
 }
 img{
     height: 100%;
@@ -29,7 +30,19 @@ img{
     justify-content: flex-start;
     justify-items: flex-start;
 }
+
 .join-twitter img{
     max-width: 3rem;
     height: auto;
+    margin-bottom: 2rem;
+}
+
+.join-twitter h1{
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.join-twitter h2{
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
 }
