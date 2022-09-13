@@ -1,13 +1,21 @@
+/* Page setup */
+html,body { height:100%; }
+
 .main{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    height: 100%;
 }
 
 .navbar{
     width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .main-page{
@@ -16,4 +24,89 @@
 
 .search-div{
     width: 400px;
+}
+
+.twitter-logo{
+    width: 60px;
+    height: 35px;
+}
+
+.twitter-logo:hover{
+    box-shadow: inset 0 0 0 1000px rgba(22, 123, 254, 0.377);
+}
+
+.profile-picture{
+    width: 40px;
+    border-radius: 50px;
+}
+
+svg{
+    padding-right: 10px;
+}
+
+.navbar-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar-top-buttons button{
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    border: white;
+    background-color: white;
+    padding: 10px 20px 10px 20px;
+}
+.navbar-top-buttons button:hover{
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+}
+
+.navbar-bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navbar-bottom-profile{
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-info{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+    align-items: flex-start;
+}
+
+.profile-button{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    border-radius: 50px;
+    border: white;
+    background-color: white;
+    padding: 10px;
+}
+
+.profile-button:hover{
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+}
+
+.settings{
+    font-size: x-large;
+}
+
+#navbar-name{
+    font-size: medium;
+    font-weight: bold;
+}
+
+#navbar-email{
+    font-size: small;
+    color: gray;
 }
