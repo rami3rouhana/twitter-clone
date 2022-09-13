@@ -85,5 +85,20 @@ img{
     background-color: rgb(223, 255, 253);
     cursor: pointer;
     transition: .2rem;
+}
 
+.languages{
+    border-top: .5px solid rgb(161, 161, 161);
+    margin-top:1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.languages p{
+    /* font-family:'Times New Roman', Times, serif; */
+    margin-right: 1rem;
+    margin-bottom: .5rem;
+    font-size: .65rem;
+    color: rgb(139, 139, 139);
+    /* border-top: 1px solid ; */
 }
