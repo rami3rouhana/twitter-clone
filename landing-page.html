@@ -8,18 +8,23 @@
     <title>Home Page</title>
 </head>
 <body>
+    <!-- Hero section starts  -->
     <section class="hero-section">
+        <!-- join twitter division starts -->
         <div class="home-container">
             <img src="images/twitter-image.png" alt="twitter-image" class="twitter-img">
             <div class="join-twitter">
                 <img src="images/twitter-logo.png" alt="twitter-logo">
                 <h1>Happening now</h1>
                 <h2>Join twitter today.</h2>
-                <button type="submit" class="sign-up">Sign up with phone or email</button>
+                <button type="submit" class="sign-up" id="sign-up">Sign up with phone or email</button>
                 <p>Already have an account</p>
-                <button type="submit" class="sign-in">Sign in</button>
+                <button type="submit" class="sign-in" id="sign-in">Sign in</button>
             </div>
         </div>
+        <!-- join twitter division starts -->
+
+        <!-- languages division starts -->
         <div class="languages">
             <p>About</p>
             <p>Help Center</p>
@@ -40,7 +45,45 @@
             <p>Settings</p>
             <p>© 2022 Twitter, Inc.</p>
         </div>
+        <!-- languages division starts -->
     </section>
+    <!-- hero section ends -->
 
+
+    <!-- login section modal start-->
+    <section class="login-section" id="sign-in-modal">
+        <div class="signin-form">
+            <img src="images/twitter-logo.png" alt="twitter logo">
+            <h1>Create your account</h1>
+            <form action="" id="credentals">
+                <input type="email" name="email" id="email">
+                <input type="password" name="password" id="password">
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        
+    </section>
+    <!-- login section modal ends-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="script/landing-page.js"></script>
 </body>
 </html>
