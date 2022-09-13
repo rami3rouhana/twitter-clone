@@ -1,0 +1,19 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar{
+    width: 400px;
+}
+
+.main-page{
+    width:500px
+}
+
+.search-div{
+    width: 400px;
+}
