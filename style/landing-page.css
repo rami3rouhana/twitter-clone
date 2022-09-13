@@ -88,7 +88,7 @@ img{
 }
 
 .languages{
-    border-top: .5px solid rgb(161, 161, 161);
+    /* border-top: .5px solid rgb(161, 161, 161); */
     margin-top:1rem;
     display: flex;
     justify-content: center;
@@ -96,9 +96,9 @@ img{
 }
 .languages p{
     /* font-family:'Times New Roman', Times, serif; */
-    margin-right: 1rem;
+    margin-right: .8rem;
     margin-bottom: .5rem;
     font-size: .65rem;
-    color: rgb(139, 139, 139);
+    color: rgb(85, 85, 85);
     /* border-top: 1px solid ; */
 }
