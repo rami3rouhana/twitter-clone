@@ -4,7 +4,7 @@ html,body { height:100%; }
 .main{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-wrap: wrap;
     height: 100%;
@@ -77,8 +77,11 @@ svg{
     background-color: rgb(29, 155, 240);;
     color: white;
     width: 50%;
-    margin-top: 10px;
+    margin-top: 10px;   
     padding: 20px 20px 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar-bottom-profile{
@@ -121,3 +124,61 @@ svg{
     font-size: small;
     color: gray;
 }
+
+.main-page h2{
+    margin: 10px;
+    background-color: white;
+}
+
+#tweet-textarea{
+    border: white;
+    width: 80%;
+    height: 40px;
+    font-size: 30px;
+}
+
+#tweet-textarea:focus{
+    outline: none !important;
+    border:0px;
+}
+
+.tweet{
+    display: flex;
+    flex-direction: column;
+}
+
+.tweet-submit{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+#submit-tweet{
+    height: 35px;
+    border-radius: 50px;
+    font-size: medium;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(29, 155, 240);
+    border: 0px;
+}
+
+.image-upload{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.image-upload svg {
+    width: 25px;
+  }
+
+.image-upload label{
+    display: flex;
+    align-items: center;
+}
+
+#file-input{
+    display: none;
+  }
