@@ -233,3 +233,31 @@ svg{
     display: flex;
     flex-direction: row;
 }
+
+.search-header{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#search-button{
+    border-right: 0px;
+    background-color: lightgray;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    outline: none;
+    height: 40px;
+}
+
+#search-bar{
+    border-left: 0px;
+    width: 60%;
+    outline: none;
+    background-color: lightgray;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    font-size: medium;
+}
+
+#search-bar:focus {
+    background-color: white;
+}
