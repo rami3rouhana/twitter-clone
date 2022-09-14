@@ -51,36 +51,59 @@
                     <button id="submit-tweet">Submit</button>
                 </div>
             </div>
-            <div class="post">
-                <div class="post-header">
-                    <img class="profile-picture" src="./images/profile-picture.jpg" >
-                    <span id="user-post"></span>
-                </div>
-                <span id="user-text"></span>
-                <img class="profile-picture" >
-                <div class="post-footer">
-                    <button id="post-comment">Like</button>
-                    <button id="post-like">Commnet</button>
-                </div>
-            </div>
-        </div>
-        <div class="search-div">
-            <input id="search-bar" type="text">
-            <div class="result-div">
-                <div class="result">
-                    <div class="left-div">
+            <div class="posts">
+                <div class="post">
+                    <div class="post-header">
                         <img class="profile-picture" src="./images/profile-picture.jpg" >
-                        <div class="user-profile">
-                            <span id="user-name"></span>
-                            <span id="user-email"></span>
+                        <div class="post-text">
+                            <div class="post-user-info">
+                                <span id="user-name">Name</span>
+                                <span id="user-email">Email</span>
+                            </div>
+                                <span id="user-post">Being a captain is all about making a name for yourself! Tell us your ship name (or captain name?) but use only emojis. Here's ours: 🩸🌑Being a captain is all about making a name for yourself! Tell us your ship name (or captain name?) but use only emojis. Here's ours: 🩸🌑Being a captain is all about making a name for yourself! Tell us your ship name (or captain name?) but use only emojis. Here's ours: 🩸🌑</span>
                         </div>
                     </div>
-                    <div class="right-div">
-                        <button id="user-follow">Follow</button>
+                    <img src="./images/profile-picture.jpg" class="post-image" >
+                    <div class="post-footer">
+                        <button id="post-like"><img class="post-action" src="./images/like.png"></button>
+                        <button id="post-comment"><img class="post-action" src="./images/comment.png"></button>
+                    </div>
+                    <div class="comments">
+                        <div class="comment">
+                            <img class="profile-picture" src="./images/profile-picture.jpg" >
+                            <div class="comment-text">
+                                <div class="comment-user-info">
+                                    <span id="comment-user-name">Name</span>
+                                    <span id="comment-user-email">Email</span>
+                                </div>
+                                    <span id="user-comment">Being a captain is all about making a name for yourself! Tell us your ship name (or captain name?) but use only emojis. Here's ours: 🩸🌑Being a captain is all about making a name for yourself! Tell us your ship name (or captain name?) but use only emojis. Here's ours: 🩸🌑Being a captain is all about making a name for yourself! Tell us your ship name (or captain name?) but use only emojis. Here's ours: 🩸🌑</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <p>Terms of Service Privacy Policy Cookie Policy Accessibility Ads info More © 2022 Twitter, Inc.</p>
+            <div class="search-div">
+                <div class="search-header">
+                    <button id="search-button"><img class="post-action" src="./images/search.png"></button>
+                    <input id="search-bar" type="text">
+                </div>
+                <div class="result-div">
+                    <div class="result">
+                        <div class="left-div">
+                            <img class="profile-picture" src="./images/profile-picture.jpg" >
+                            <div class="user-profile">
+                                <span id="user-name"></span>
+                                <span id="user-email"></span>
+                            </div>
+                        </div>
+                        <div class="right-div">
+                            <button id="user-follow">Follow</button>
+                        </div>
+                    </div>
+                </div>
+                <p>Terms of Service Privacy Policy Cookie Policy Accessibility Ads info More © 2022 Twitter, Inc.</p>
+            </div>
         </div>
     </div>
 </body>
