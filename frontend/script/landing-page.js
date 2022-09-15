@@ -26,23 +26,25 @@ window.onclick = function(event) {
 
 
 //register page 
-let firstName = document.querySelector("#first-name").value;
-let lastName = document.querySelector("#last-name").value;
-let email = document.querySelector("#email").value;
-let password = document.querySelector("#password").value;
-let registerButton = document.querySelector("#sign-up-btn");
-let registerForm=document.querySelector("#register-form");
+const registerButton = document.getElementById("register-btn");
+const registerForm=document.querySelector("#register-form");
 
 //prevent refresh 
-registerForm.addEventListener("submit", function (evt) {
-    evt.preventDefault();
-});
+// registerForm.addEventListener("submit", function (evt) {
+//     evt.preventDefault();
+// });
 
 //click on sign up
-signInButton.addEventListener('click', signUpOperation());
+registerButton.addEventListener('click', signUpOperation);
 
 function signUpOperation() {
-    let url = "http://localhost/bootstrap-with-db/php/register.php";
+    const firstName = document.querySelector("#first-name").value;
+    const lastName = document.querySelector("#last-name").value;
+    const email = document.querySelector("#email").value;
+    const password = document.querySelector("#password").value;
+
+    const url = "http://localhost/twitter-clone/backend/register.php";
+    // debugger
     let parameters = {
         method:'POST',
         body: new URLSearchParams({
