@@ -14,15 +14,11 @@ $email=$_POST["email"];
 $password=$_POST["password"];
 
 //queries
-$query=$mysqli->prepare("INSERT INTO users VALUES(? ? ? ?)");
-$query->bind_param("ssss" , $first_name,$last_name,$email,$password);
+$query=$mysqli->prepare("INSERT INTO users(first_name,last_name,email,password) VALUES(?,?,?,?)");
+$query->bind_param("ssss", $first_name,$last_name,$email,$password);
 $query->execute();
 
 //response
 $response=[];
 $response["success"]=true;
 echo json_encode($response);
-
-
-
-?>
