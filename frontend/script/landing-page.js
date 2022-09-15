@@ -34,17 +34,19 @@ const registerForm=document.querySelector("#register-form");
 //     evt.preventDefault();
 // });
 
-//click on sign up
+//click on sign up button
 registerButton.addEventListener('click', signUpOperation);
-
-function signUpOperation() {
+// sign up operation
+async function signUpOperation  (e) {
+    e.preventDefault();
+    //define variables
     const firstName = document.querySelector("#first-name").value;
     const lastName = document.querySelector("#last-name").value;
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
 
     const url = "http://localhost/twitter-clone/backend/register.php";
-    // debugger
+
     let parameters = {
         method:'POST',
         body: new URLSearchParams({
@@ -54,10 +56,37 @@ function signUpOperation() {
             password:password
         })
     }
-
-    fetch(url,parameters)
-        .then(respone=>respone.json())
-        .then(data=>console.log(data));
+    await fetch(url,parameters)
+        .then(response=>response.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err));
         
 }
 
+// login page
+
+loginButton = document.querySelector("#login-button");
+//click on sign in buttom
+loginButton.addEventListener('click', signInOperation);
+//sign in operation
+async function signInOperation  (e) {
+    e.preventDefault();
+    //define variable
+    const email = document.querySelector("#login-email").value;
+    const password = document.querySelector("#login-password").value;
+
+    const url = "http://localhost/twitter-clone/backend/login.php";
+
+    let parameters = {
+        method:'POST',
+        body: new URLSearchParams({
+            email:email,
+            password:password
+        })
+    }
+    await fetch(url,parameters)
+        .then(response=>response.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err));
+        
+}
