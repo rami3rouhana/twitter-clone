@@ -23,3 +23,39 @@ window.onclick = function(event) {
     }
 
 }
+
+
+//register page 
+let firstName = document.querySelector("#first-name").value;
+let lastName = document.querySelector("#last-name").value;
+let email = document.querySelector("#email").value;
+let password = document.querySelector("#password").value;
+let registerButton = document.querySelector("#sign-up-btn");
+let registerForm=document.querySelector("#register-form");
+
+//prevent refresh 
+registerForm.addEventListener("submit", function (evt) {
+    evt.preventDefault();
+});
+
+//click on sign up
+signInButton.addEventListener('click', signUpOperation());
+
+function signUpOperation() {
+    let url = "http://localhost/bootstrap-with-db/php/register.php";
+    let parameters = {
+        method:'POST',
+        body: new URLSearchParams({
+            fname:firstName,
+            lname:lastName,
+            email:email,
+            password:password
+        })
+    }
+
+    fetch(url,parameters)
+        .then(respone=>respone.json())
+        .then(data=>console.log(data));
+        
+}
+
