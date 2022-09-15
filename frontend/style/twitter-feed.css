@@ -23,7 +23,7 @@ html,body { height:100%; }
 }
 
 .search-div{
-    width: 400px;
+    width: 300px;
 }
 
 .twitter-logo{
@@ -79,15 +79,15 @@ svg{
     margin-bottom: 20px;
 }
 
-#tweet{
-    background-color: rgb(29, 155, 240);;
-    color: white;
-    width: 50%;
-    margin-top: 10px;   
-    padding: 20px 20px 20px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.tweet-button{
+    background-color: rgb(29, 155, 240) !important;
+    color: white !important;
+    width: 50% !important;
+    margin-top: 10px !important;   
+    padding: 20px 20px 20px 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 .navbar-bottom-profile{
@@ -121,12 +121,12 @@ svg{
     font-size: x-large;
 }
 
-#navbar-name{
+.navbar-name{
     font-size: medium;
     font-weight: bold;
 }
 
-#navbar-email{
+.navbar-email{
     font-size: small;
     color: gray;
 }
@@ -136,14 +136,19 @@ svg{
     background-color: white;
 }
 
-#tweet-textarea{
+.tweet-header{
+    display: flex;
+    flex-direction: row;
+}
+
+.tweet-textarea{
     border: white;
     width: 80%;
     height: 40px;
     font-size: 30px;
 }
 
-#tweet-textarea:focus{
+.tweet-textarea:focus{
     outline: none !important;
     border:0px;
 }
@@ -161,12 +166,12 @@ svg{
     
 }
 
-#submit-tweet{
+.submit-tweet, .user-follow{
     height: 35px;
     padding: .1rem .7rem;
     border-radius: 50px;
-    font-size: .7rem;
-    /* font-weight: bold; */
+    font-size: .9rem;
+    font-weight: bold;
     color: white;
     background-color: rgb(29, 155, 240);
     border: 0px;
@@ -188,7 +193,7 @@ svg{
     align-items: center;
 }
 
-#file-input{
+.file-input{
     display: none;
   }
 
@@ -221,12 +226,12 @@ svg{
     width: 20px;
 }
 
-#post-like{
+.post-like{
     border: 0px;
     background-color: white;
 }
 
-#post-comment{
+.post-comment{
     border: 0px;
     background-color: white;
 }
@@ -247,7 +252,7 @@ svg{
     margin-bottom: 20px;
 }
 
-#search-button{
+.search-button{
     border-right: 0px;
     background-color: lightgray;
     border-top-left-radius: 50px;
@@ -256,9 +261,9 @@ svg{
     height: 40px;
 }
 
-#search-bar{
+.search-bar{
     border-left: 0px;
-    width: 60%;
+    width: 100%;
     outline: none;
     background-color: lightgray;
     border-top-right-radius: 50px;
@@ -266,6 +271,33 @@ svg{
     font-size: medium;
 }
 
-#search-bar:focus {
+.search-bar:focus {
     background-color: white;
+}
+
+.result{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.result{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.left-div{
+    display: flex;
+    flex-direction: row;
+}
+
+.user-profile{
+    display: flex;
+    flex-direction: column;
+}
+
+.right-div{
+    display: flex;
+    align-items: center;
 }
