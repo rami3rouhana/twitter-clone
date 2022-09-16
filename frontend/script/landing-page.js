@@ -45,48 +45,146 @@ async function signUpOperation  (e) {
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
 
-    const url = "http://localhost/twitter-clone/backend/register.php";
+    //password specifications 
+    let lowerCaseLetters = /[a-z]/g;
+    let upperCaseLetters = /[A-Z]/g;
+    let numbers = /[0-9]/g;
 
-    let parameters = {
-        method:'POST',
-        body: new URLSearchParams({
-            fname:firstName,
-            lname:lastName,
-            email:email,
-            password:password
-        })
+    //define input warnings
+    const firstNameWarning = document.querySelector("#fname-warning");
+    const lastNameWarning = document.querySelector("#lname-warning");
+    const emailWarning = document.querySelector("#email-warning");
+    const passwordWarning = document.querySelector("#password-warning");
+
+    //input validation
+    if (firstName.length > 8 ||firstName.length <2) {
+        firstNameWarning.innerHTML = "please enter first name between 2 and 10 characters";
+    } else if (lastName.length > 8 || lastName.length < 2) {
+        lastNameWarning.innerHTML = "please enter last name between 2 and 10 characters";
+        firstNameWarning.innerHTML = "";
+    }else if (password.length <5 || !password.match(numbers) || !password.match(upperCaseLetters) || !password.match(lowerCaseLetters)) {
+        passwordWarning.innerHTML = "your password must contains minimum 5 characters include uppercases , lowercases and numbers";
+        firstNameWarning.innerHTML = "";
+        lastNameWarning.innerHTML = "";
+    
     }
-    await fetch(url,parameters)
-        .then(response=>response.json())
-        .then(data => console.log(data))
-        .catch(err => console.log(err));
+    else {
+        //api request and response
+        const url = "http://localhost/twitter-clone/backend/register.php";
+        let parameters = {
+            method:'POST',
+            body: new URLSearchParams({
+                fname:firstName,
+                lname:lastName,
+                email,
+                password
+            })
+        }
+        await fetch(url,parameters)
+            .then(response=>response.json())
+            .then(data => {
+                console.log(data);
+                if (data.email > 1) {
+                    emailWarning.innerHTML = "Your email is already exist";
+                    passwordWarning.innerHTML = "";
+                }
+            }
+        )
+            .catch(err => console.log(err));
+        
+    }
+
+
+
+
+
+
+
+
+
         
 }
 
+
+function store(){
+
+    var name = document.getElementById('name');
+    var pw = document.getElementById('pw');
+    var lowerCaseLetters = /[a-z]/g;
+    var upperCaseLetters = /[A-Z]/g;
+    var numbers = /[0-9]/g;
+
+    if(name.value.length == 0){
+        alert('Please fill in email');
+
+    }else if(pw.value.length == 0){
+        alert('Please fill in password');
+
+    }else if(name.value.length == 0 && pw.value.length == 0){
+        alert('Please fill in email and password');
+
+    }else if(pw.value.length > 8){
+        alert('Max of 8');
+
+    }else if(!pw.value.match(numbers)){
+        alert('please add 1 number');
+
+    }else if(!pw.value.match(upperCaseLetters)){
+        alert('please add 1 uppercase letter');
+
+    }else if(!pw.value.match(lowerCaseLetters)){
+        alert('please add 1 lovercase letter');
+
+    }else{
+        localStorage.setItem('name', name.value);
+        localStorage.setItem('pw', pw.value);
+        alert('Your account has been created');
+    }
+}
+
+//checking
+function check(){
+    var storedName = localStorage.getItem('name');
+    var storedPw = localStorage.getItem('pw');
+
+    var userName = document.getElementById('userName');
+    var userPw = document.getElementById('userPw');
+    var userRemember = document.getElementById("rememberMe");
+
+    if(userName.value == storedName && userPw.value == storedPw){
+        alert('You are logged in.');
+    }else{
+        alert('Error on login');
+    }
+}
 // login page
 
-loginButton = document.querySelector("#login-button");
-//click on sign in buttom
-loginButton.addEventListener('click', signInOperation);
-//sign in operation
-async function signInOperation  (e) {
-    e.preventDefault();
-    //define variable
-    const email = document.querySelector("#login-email").value;
-    const password = document.querySelector("#login-password").value;
+// loginButton = document.querySelector("#login-button");
+// //click on sign in buttom
+// loginButton.addEventListener('click', signInOperation);
+// //sign in operation
+// async function signInOperation  (e) {
+//     e.preventDefault();
+//     //define variable
+//     const email = document.querySelector("#login-email").value;
+//     const password = document.querySelector("#login-password").value;
 
-    const url = "http://localhost/twitter-clone/backend/login.php";
+//     const url = "http://localhost/twitter-clone/backend/login.php";
 
-    let parameters = {
-        method:'POST',
-        body: new URLSearchParams({
-            email:email,
-            password:password
-        })
-    }
-    await fetch(url,parameters)
-        .then(response=>response.json())
-        .then(data => console.log(data))
-        .catch(err => console.log(err));
+//     let parameters = {
+//         method:'POST',
+//         body: new URLSearchParams({
+//             email:email,
+//             password:password
+//         })
+//     }
+//     await fetch(url,parameters)
+//         .then(response=>response.json())
+//         .then(data => console.log(data))
+//         .catch(err => console.log(err));
         
-}
+// }
+
+
+
+
