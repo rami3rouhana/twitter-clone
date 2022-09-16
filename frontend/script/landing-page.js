@@ -30,15 +30,15 @@ const registerButton = document.getElementById("register-btn");
 const registerForm=document.querySelector("#register-form");
 
 //prevent refresh 
-// registerForm.addEventListener("submit", function (evt) {
-//     evt.preventDefault();
-// });
+registerForm.addEventListener("submit", function (evt) {
+    evt.preventDefault();
+});
 
 //click on sign up button
 registerButton.addEventListener('click', signUpOperation);
 // sign up operation
-async function signUpOperation  (e) {
-    e.preventDefault();
+async function signUpOperation() {
+
     //define variables
     const firstName = document.querySelector("#first-name").value;
     const lastName = document.querySelector("#last-name").value;
