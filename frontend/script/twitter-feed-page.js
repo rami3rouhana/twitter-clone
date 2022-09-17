@@ -7,22 +7,39 @@ document.getElementById("upload-div").addEventListener("click" ,()=>{
 })
 
 // Check file type
-function isFileImage(file) {
+const isFileImage = (file) => {
     return file && file['type'].split('/')[0] === 'image';
 }
 
+const readFile = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+  
+      reader.onload = res => {
+        resolve(res.target.result);
+      };
+      reader.onerror = err => reject(err);
+  
+      reader.readAsDataURL(file);
+    });
+  }
+
 // Tweet functionality 
-const tweet = async() => {
-    url = "";
+const tweet = async ( e ) => {
+    e.preventDefault;
+    const userId = 1;
 
     // Retrieving data
     const tweetText = document.getElementById("tweet-text").value;
-    if(isFileImage(tweetImage)){
-        const image64 = btoa(tweetImage.files[0]);
-    }else{
-        alert("Please enter an image");
-        return;
-    }
+
+
+    // Encrypt Image
+    let encryptedImage = await readFile(tweetImage.files[0]);   
+    encryptedImage = encryptedImage.split(",")[1];
+
+    const imageExtension = tweetImage.files[0].name.split(".")[tweetImage.files[0].name.split(".").length -1];
+
+    url = "http://localhost/twitter-clone/backend/tweet.php";
 
     // Send data to the backend
     try {
@@ -30,16 +47,18 @@ const tweet = async() => {
             method: 'POST',
             body: JSON.stringify({
                 tweetText,
-                image64
+                encryptedImage,
+                imageExtension,
+                userId
             }),
             headers: {
               'Content-type': 'application/json; charset=UTF-8',
             }
           })
-        if(res){
-            
-        }
-    } catch (error) {
+          debugger
+          const data = await res.json();
+        } catch (error) {
+            debugger
         console.log(error)
     }
     
