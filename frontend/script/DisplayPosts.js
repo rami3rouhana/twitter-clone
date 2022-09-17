@@ -1,9 +1,10 @@
+import { addLike, addComment, removeComment, removeLike, removePost } from "./PostActions.js";
+
 export const DisplayPosts = () => {
 
     // Receiving posts from the database
-    const receiveComments = async () =>{
+    const receiveComments = async (postId) =>{
         const url = "http://localhost/twitter-clone/backend/get_post_comments.php";
-        const postId = 1;
         
         let body ={
             postId
@@ -23,10 +24,8 @@ export const DisplayPosts = () => {
     }
 
     // Receiving posts from the database
-    const receiveLikes = async () =>{
+    const receiveLikes = async ( postId ) =>{
         const url = "http://localhost/twitter-clone/backend/count_post_likes.php";
-        const postId = 1;
-        
         let body ={
             postId
         }
@@ -45,6 +44,4 @@ export const DisplayPosts = () => {
             console.log(error)
         }
     }
-
-    receiveLikes();
 }
