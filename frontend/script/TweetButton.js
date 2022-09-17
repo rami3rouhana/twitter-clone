@@ -25,11 +25,10 @@ const readFile = (file) => {
     });
   }
 
+
 // Tweet functionality 
 const tweet = async ( e ) => {
-    e.preventDefault;
-    const userId = 1;
-
+  e.preventDefault();
     // Retrieving data
     const tweetText = document.getElementById("tweet-text").value;
 
@@ -40,7 +39,9 @@ const tweet = async ( e ) => {
 
     const imageExtension = tweetImage.files[0].name.split(".")[tweetImage.files[0].name.split(".").length -1];
 
-    url = "http://localhost/twitter-clone/backend/tweet.php";
+    const url = "http://localhost/twitter-clone/backend/tweet.php";
+
+    const userId = localStorage.getItem("user_id");
 
     // Send data to the backend
     try {
@@ -57,12 +58,16 @@ const tweet = async ( e ) => {
             }
           })
           const data = await res.json();
+          debugger
           
         } catch (error) {
-        console.log(error)
+          debugger
+          console.log(error)
     }
     
 }
+
+
 
 document.getElementById("tweet-submit").addEventListener("click", tweet);
 

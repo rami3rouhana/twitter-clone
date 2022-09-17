@@ -29,9 +29,13 @@ $query = $mysqli->prepare("INSERT INTO posts(text,image,users_id) VALUES(?,?,?)"
 $query->bind_param("sss", $text, $path, $id);
 $query->execute();
 
+$response=[];
+
 if($status){
-    echo "Successfully Uploaded";
+    echo $response["success"]=true;
+
    }else{
-    echo "Upload failed";
+    echo $response["success"]=false;
    }
+   echo json_encode($response);
 ?>
