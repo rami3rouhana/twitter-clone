@@ -1,25 +1,22 @@
 <?php
-
 //connection
 include("connection.php");
-
 //headers
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
 header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
-
-//variable
-$user_id=$_POST["userId"];
+//variables
 $post_id=$_POST["postId"];
-
+$user_id=$_POST["userId"];
+$comment_content=$_POST["text"];
 //query
-$query=$mysqli->prepare("insert into likes (users_id,posts_id) VALUES(?,?)");
-$query->bind_param("ii", $user_id,$post_id);
+$query=$mysqli->prepare("INSERT INTO comments (text,users_id,posts_id) VALUES(?,?,?)");
+$query->bind_param("sii", $comment_content, $user_id, $post_id);
 $query->execute();
 
-//response 
-$result=[];
-$result["success"]=true;
-echo json_encode($result);
+//response
+$response=[];
+$response['success']=true;
+echo json_encode($response);
 
 ?>
