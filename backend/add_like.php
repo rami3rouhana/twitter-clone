@@ -17,10 +17,9 @@ $query=$mysqli->prepare("insert into likes (users_id,posts_id) VALUES(?,?)");
 $query->bind_param("ii", $user_id,$post_id);
 $query->execute();
 
+//response 
 $result=[];
 $result["success"]=true;
 echo json_encode($result);
-
-
 
 ?>
