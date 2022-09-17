@@ -10,9 +10,14 @@ $post_id=$_POST("postId");
 //queries
 $query = $mysqli->prepare("SELECT * FROM `comments`LEFT JOIN posts ON comments.posts_id = posts.id WHERE posts_id='$post_id'");
 $query->execute();
+$array = $query->get_result();
 //result
-$result=[];
-$result["success"]=true;
+$response = [];
+
+//implement every row in array 
+while ($a = $array->fetch_assoc()) {
+    $response[] = $a;
+}
 echo json_encode($result);
 
 ?>
