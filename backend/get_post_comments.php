@@ -1,18 +1,18 @@
-<?php
+<?php 
 //connection
 include("connection.php");
 //headers
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
 header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
-//variables
-$comment_id=$_POST["commentId"];
-//query
-$query=$mysqli->prepare("DELETE FROM comments WHERE id='$comment_id'");
+//variable 
+$post_id=$_POST("postId");
+//queries
+$query = $mysqli->prepare("SELECT * FROM `comments`LEFT JOIN posts ON comments.posts_id = posts.id WHERE posts_id='$post_id'");
 $query->execute();
+//result
+$result=[];
+$result["success"]=true;
+echo json_encode($result);
 
-//response
-$response=[];
-$response["success"]=true;
-echo json_encode($response);
 ?>
