@@ -56,10 +56,9 @@ const tweet = async ( e ) => {
               'Content-type': 'application/json; charset=UTF-8',
             }
           })
-          debugger
           const data = await res.json();
+          
         } catch (error) {
-            debugger
         console.log(error)
     }
     

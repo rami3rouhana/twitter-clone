@@ -22,5 +22,29 @@ export const DisplayPosts = () => {
         }
     }
 
-    receiveComments();
+    // Receiving posts from the database
+    const receiveLikes = async () =>{
+        const url = "http://localhost/twitter-clone/backend/count_post_likes.php";
+        const postId = 1;
+        
+        let body ={
+            postId
+        }
+
+        body = JSON.stringify(body);
+
+        try {
+            const res = await fetch(url,{
+                method:"POST",
+                body
+            });
+            const resData = await res.json();
+            //resData['COUNT(id)']
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    receiveLikes();
 }
