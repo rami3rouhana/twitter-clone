@@ -9,8 +9,8 @@ header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
 header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
 
 //variable
-$user_id=$_POST["user_id"];
-$post_id=$_POST["post_id"];
+$user_id=$_POST["userId"];
+$post_id=$_POST["postId"];
 
 //query
 $query=$mysqli->prepare("insert into likes (users_id,posts_id) VALUES(?,?)");
