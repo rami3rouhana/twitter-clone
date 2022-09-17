@@ -8,15 +8,15 @@ header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorizatio
 //variables
 $post_id=$_POST["postId"];
 $user_id=$_POST["userId"];
-$comment_content=$_POST["postId"];
+$comment_content=$_POST["text"];
 //query
-$query=$mysqli->prepare("INSERT INTO comments VALUES(?,?,?)");
-$query->bind_param("sii", $comment_content,$user_id,$post_id);
+$query=$mysqli->prepare("INSERT INTO comments (text,users_id,posts_id) VALUES(?,?,?)");
+$query->bind_param("sii", $comment_content, $user_id, $post_id);
 $query->execute();
 
 //response
 $response=[];
-$response['susccess']=true;
+$response['success']=true;
 echo json_encode($response);
 
 ?>
