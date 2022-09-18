@@ -30,7 +30,6 @@ export const DisplayPosts = () => {
                 const image = post.image;
                 const userId =post.users_id;
                 const comments = await DisplayComments(id);
-                debugger
                 const data = Posts({ id, name, email, text, image, comments, userId });
                 document.getElementById("posts").innerHTML += data;
                 EventListners();
@@ -65,5 +64,5 @@ export const DisplayPosts = () => {
         }
     }
 
-    receivePosts(1);
+    receivePosts(localStorage.getItem("user_id"));
 }

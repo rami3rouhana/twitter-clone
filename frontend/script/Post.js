@@ -1,5 +1,4 @@
 export const Posts = ( info ) => {
-debugger
     return (`
     <div class="post" id=${info.id}>
     <div class="post-header">
@@ -11,7 +10,7 @@ debugger
             </div>
             <span class="user-post">${info.text}</span>
         </div>
-        <button class="delete-post"}">X</button>
+        <button class="delete-post">X</button>
     </div>
     <img src="../backend/${info.image}" class="post-image" >
     <div class="post-footer">

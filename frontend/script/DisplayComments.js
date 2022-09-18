@@ -27,7 +27,6 @@ export const DisplayComments = async (postId) => {
             const email = comment.email;
             const image = comment.image;
             const userId = comment.users_id;
-            debugger
             comments[id] = Comment({ id, name, email, text, image, postId,userId }); 
             return data;
         }))}else{
