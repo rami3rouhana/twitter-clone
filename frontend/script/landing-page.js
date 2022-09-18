@@ -1,3 +1,7 @@
+if (localStorage.getItem("user_id") !== null) {
+    window.location = "../frontend/landing-page.html";
+}
+
 // define variables 
 let signInButton = document.getElementById("sign-in");
 let signUpButton = document.getElementById("sign-up");
