@@ -44,7 +44,8 @@
         }        
     }
 
-    export const addComment = async ( postId, userId, text ) =>{
+    export const addComment = async ( userId, postId, text ) =>{
+        debugger
         const url = "http://localhost/twitter-clone/backend/add_comment.php";
         
         let body ={
