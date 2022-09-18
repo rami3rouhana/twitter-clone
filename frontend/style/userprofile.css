@@ -148,6 +148,9 @@ svg {
 .user-profile{
     margin-bottom: 4rem;
 }
+.user-profile h2{
+    margin-bottom: 1rem;
+}
 
 .profile-image-set{
     display: flex;
@@ -159,6 +162,22 @@ svg {
     border-radius: 50px;
     max-height: 100px;
 }
+
+.profile-image-set .change-pp{
+    margin-right: 2rem;
+    margin-top: 1.5rem;
+    max-width: 7rem;
+    max-height: 3rem;
+    background: none;
+    border: solid .2px rgb(196, 196, 196);
+    border-radius: 1rem;
+}
+
+.change-pp:hover{
+    cursor: pointer;
+    background: beige;
+    transition: .2s;
+}   
 
 
 
