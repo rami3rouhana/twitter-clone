@@ -4,7 +4,7 @@ export const DisplayPosts = () => {
 
         // Receiving posts from the database
         const receivePosts = async (userId) =>{
-            const url = "http://localhost/twitter-clone/backend/posts.php";
+            const url = "http://localhost/twitter-clone/backend/main_posts.php";
             
             let body ={
                 userId
