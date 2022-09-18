@@ -12,7 +12,16 @@ $_POST = json_decode(file_get_contents('php://input'), true);
 $userId = $_POST["userId"];
 
 //queries
-$query=$mysqli->prepare("SELECT * FROM posts WHERE users_id='$userId'");
+$query=$mysqli->prepare("
+SELECT * FROM posts 
+LEFT JOIN friends
+ON posts.users_id = friends.users_id
+WHERE (
+    (friends.users_id = ? AND is_blocked = 0) 
+    OR (friends.friends_id = ? AND is_blocked = 0)) 
+AND (friends.users_id = ? AND friends.is_followed =?)
+");
+$query->bind_param("iiii",$userId, $userId, $userId, $userId);
 $query->execute();
 $array=$query->get_result();
 
