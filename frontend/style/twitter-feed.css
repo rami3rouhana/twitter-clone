@@ -1,7 +1,7 @@
 /* Page setup */
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500;600&family=Lato:wght@400;700&family=Maven+Pro:wght@800;900&family=Noto+Sans+KR&family=Nunito+Sans:wght@300;800&display=swap');
 *{
-    
+
     font-family: 'Nunito Sans', sans-serif;
 }
 html,body { height:100%; }
@@ -255,7 +255,7 @@ svg{
 
 .post-comment{
     border: 0px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
 
 .comments{
@@ -267,6 +267,22 @@ svg{
 .comment{
     display: flex;
     flex-direction: row;
+}
+.user-write-comment{
+    width:20rem;
+    height: 2rem;
+    border: solid .5px rgb(167, 167, 167);
+}
+.reply-btn{
+    height: 35px;
+    padding: 0.1rem 0.7rem;
+    border-radius: 50px;
+    font-size: .9rem;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(29, 155, 240);
+    border: 0px;
+    width: 4rem;
 }
 
 .search-header{
