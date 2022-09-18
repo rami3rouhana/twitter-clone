@@ -23,4 +23,13 @@ export const EventListners = async ( ) => {
             addComment(userId,postId,postsComment[postId])
         })    
     }
+
+    const deletePosts = document.getElementsByClassName("delete-post");
+    
+    for ( let deletePost of deletePosts){
+        deletePost.addEventListener("click",(e)=>{
+            const postId = e.currentTarget.parentElement.parentElement.id;
+            removePost(postId)
+        })    
+    }
 }
