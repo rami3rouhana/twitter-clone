@@ -32,7 +32,7 @@ export const EventListners = async ( ) => {
             removePost(postId)
         })    
     }
-
+    if(document.getElementById("change-profile")){
     document.getElementById("change-profile").onchange =( e )=>{
         const readFile = (file) => {
             return new Promise((resolve, reject) => {
@@ -82,5 +82,10 @@ export const EventListners = async ( ) => {
               
           }
           udateImage();
-    }
+    }}
+
+    
+    document.getElementById("profile-page").addEventListener("click", () =>
+      window.location = "../frontend/userprofile.html"
+    )
 }

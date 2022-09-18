@@ -16,7 +16,9 @@ export const UserInfo = async (postId) => {
             body
         })
         const resData = await res.json();
+        if(document.getElementById("userImage")){
         document.getElementById("userImage").src = "../backend/"+resData[0].profile;
+        }
         document.getElementById("tweetImage").src = "../backend/"+resData[0].profile;
         document.getElementById("profile-image").src = "../backend/"+resData[0].profile;
         document.getElementById("userName").innerHTML = resData[0].first_name + " " + resData[0].last_name;
