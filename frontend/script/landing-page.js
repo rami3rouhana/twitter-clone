@@ -1,5 +1,5 @@
 if (localStorage.getItem("user_id") !== null) {
-    window.location = "../frontend/tweet-feed.html";
+    window.location = "../frontend/twitter-feed.html";
 }
 
 // define variables 
