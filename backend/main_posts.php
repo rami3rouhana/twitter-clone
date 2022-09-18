@@ -13,15 +13,18 @@ $userId = $_POST["userId"];
 
 //queries
 $query=$mysqli->prepare("
-SELECT * FROM posts 
-LEFT JOIN friends
+SELECT *,posts.id FROM posts 
+JOIN friends
 ON posts.users_id = friends.users_id
+JOIN users
+ON friends.friends_id = users.id
 WHERE (
     (friends.users_id = ? AND is_blocked = 0) 
     OR (friends.friends_id = ? AND is_blocked = 0)) 
-AND (friends.users_id = ? AND friends.is_followed =?)
+AND (friends.users_id = ? AND friends.is_followed =1)
+GROUP BY posts.id
 ");
-$query->bind_param("iiii",$userId, $userId, $userId, $userId);
+$query->bind_param("iii",$userId, $userId, $userId);
 $query->execute();
 $array=$query->get_result();
 
