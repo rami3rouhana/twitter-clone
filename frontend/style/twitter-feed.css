@@ -180,6 +180,28 @@ svg{
     background-color: rgb(29, 155, 240);
     border: 0px;
 }
+.user-block{
+    height: 35px;
+    padding: .1rem .7rem;
+    border-radius: 50px;
+    font-size: .9rem;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(187, 187, 187);
+    border: 0px;
+}
+
+.user-block:hover{
+    background-color: rgb(160, 160, 160);
+    border: 0px;
+    cursor: pointer;
+    transition: .3s;
+}
+.user-follow:hover{
+    background-color: rgb(33, 133, 199);
+    cursor: pointer;
+    transition: .3s;
+}
 
 .image-upload{
     display: flex;

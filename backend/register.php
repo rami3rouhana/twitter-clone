@@ -13,7 +13,6 @@ $last_name = $_POST["lname"];
 $email = $_POST["email"];
 $password = $_POST["password"];
 
-
 /* Secure password hash. */
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 //check email if exixts
