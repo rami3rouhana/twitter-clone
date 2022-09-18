@@ -1,6 +1,5 @@
 import { Comment } from './Comment.js'
 
-let comments =0
 
 export const DisplayComments = async (postId) => {
 
