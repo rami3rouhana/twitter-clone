@@ -18,7 +18,7 @@ SELECT * FROM users
 LEFT JOIN friends
 ON friends.friends_id = users.id
 WHERE friends.users_id = ? 
-AND is_blocked =0 
+AND is_blocked = null 
 AND ((users.first_name LIKE ?
 		OR users.last_name LIKE ?)
     OR users.email = ?)
