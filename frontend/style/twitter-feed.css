@@ -243,14 +243,14 @@ svg{
     border-radius: 20px;
     margin: 20px 0px 20px 0px;
 }
-.delete-post{
+.delete-comment{
     height:1.5rem;
     margin-right:1rem ;
     background: none;
     border:.2px rgb(211, 211, 211) solid;
     border-radius: .2rem;
 }
-.delete-post:hover{
+.delete-comment:hover{
     background: rgb(219, 219, 219);
     cursor: pointer;
     transition: .3s;
