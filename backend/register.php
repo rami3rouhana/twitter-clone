@@ -14,7 +14,7 @@ $email = $_POST["email"];
 $password = $_POST["password"];
 
 /* Secure password hash. */
-$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+$hashed_password = hash('sha256', $password);
 //check email if exixts
 $check_email = "SELECT email FROM users WHERE email='$email'";
 $email_result = mysqli_query($mysqli, $check_email);
@@ -25,17 +25,25 @@ if ($email_count >= 1) {
     $response = [];
     $response["email"] = $email_count;
     echo json_encode($response);
-}
-else{
+} else {
 
-//queries
-$query = $mysqli->prepare("INSERT INTO users(first_name,last_name,email,password) VALUES(?,?,?,?)");
-$query->bind_param("ssss", $first_name, $last_name, $email, $hashed_password);
-$query->execute();
+    //queries
+    $query = $mysqli->prepare("INSERT INTO users(first_name,last_name,email,password) VALUES(?,?,?,?)");
+    $query->bind_param("ssss", $first_name, $last_name, $email, $hashed_password);
+    $query->execute();
+    $id = $query->insert_id;
 
-//response
-$response = [];
-$response["success"] = true;
+    $response = [];
+    $response["success"] = true;
+    $response["id"] = $id;
+    echo json_encode($response);
+    //response
 
-echo json_encode($response);
+    // $user_id_query=$mysqli->prepare("select id from users where email='$email' and password='$password'");
+    // $user_id_query->execute();
+    // $array=$user_id_query->get_result();
+
+    // $response["id"] = $array->fetch_assoc();
+
+    // echo json_encode($response);
 }

@@ -11,21 +11,21 @@ header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorizatio
 
 // email and password sent from form 
 
-$email = mysqli_real_escape_string($mysqli, $_POST['email']);
-$password = mysqli_real_escape_string($mysqli, $_POST['password']);
-$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+$email = $_POST['email'];
+$password = $_POST['password'];
+$hashed_password = hash('sha256', $password);
 
 $sql = "SELECT id FROM users WHERE email= '$email' and password = '$hashed_password'";
 $result = mysqli_query($mysqli, $sql);
 
 $count = mysqli_num_rows($result);
-
 // If result matched $email and $password, table row must be 1 row
 
 if ($count == 1) {
+    // echo json_encode(($result->fetch_array()));
     echo json_encode(($result->fetch_array()));
 } else {
-    $response=[];
-    $response["message"]= "Your Login Name or Password is invalid";
+    $response = [];
+    $response["message"] = "Your Login Name or Password is invalid";
     echo json_encode($response);
 }

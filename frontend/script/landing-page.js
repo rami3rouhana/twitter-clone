@@ -36,6 +36,8 @@ registerForm.addEventListener("submit", function (evt) {
 
 //click on sign up button
 registerButton.addEventListener('click', signUpOperation);
+
+
 // sign up operation
 async function signUpOperation() {
 
@@ -83,7 +85,8 @@ async function signUpOperation() {
         await fetch(url,parameters)
             .then(response=>response.json())
             .then(data => {
-                console.log(data);
+                localStorage.setItem("user_id", data.id);
+                window.location = "../frontend/twitter-feed.html";
                 if (data.email > 1) {
                     emailWarning.innerHTML = "Your email is already exist";
                     passwordWarning.innerHTML = "";
@@ -104,8 +107,9 @@ loginForm = document.getElementById("loginform");
 loginForm.addEventListener("submit", function (evt) {
     evt.preventDefault();
 });
+
 //sign in operation
-async function signInOperation  () {
+async function signInOperation(){
     //define variable
     const email = document.querySelector("#login-email").value;
     const password = document.querySelector("#login-password").value;
@@ -122,9 +126,8 @@ async function signInOperation  () {
     await fetch(url,parameters)
         .then(response=>response.json())
         .then(data => {
-            console.log(data);
-            const userId = data.id
-            localStorage.setItem('userId', userId);
+            localStorage.setItem("user_id", data[0]);
+            window.location = "../frontend/twitter-feed.html";
             // localStorage.setItem('pw', pw.value);
         })
         .catch(err => console.log(err));
