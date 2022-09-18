@@ -91,100 +91,111 @@ async function signUpOperation() {
             }
         )
             .catch(err => console.log(err));
-        
-    }
-
-
-
-
-
-
-
-
-
-        
-}
-
-
-function store(){
-
-    var name = document.getElementById('name');
-    var pw = document.getElementById('pw');
-    var lowerCaseLetters = /[a-z]/g;
-    var upperCaseLetters = /[A-Z]/g;
-    var numbers = /[0-9]/g;
-
-    if(name.value.length == 0){
-        alert('Please fill in email');
-
-    }else if(pw.value.length == 0){
-        alert('Please fill in password');
-
-    }else if(name.value.length == 0 && pw.value.length == 0){
-        alert('Please fill in email and password');
-
-    }else if(pw.value.length > 8){
-        alert('Max of 8');
-
-    }else if(!pw.value.match(numbers)){
-        alert('please add 1 number');
-
-    }else if(!pw.value.match(upperCaseLetters)){
-        alert('please add 1 uppercase letter');
-
-    }else if(!pw.value.match(lowerCaseLetters)){
-        alert('please add 1 lovercase letter');
-
-    }else{
-        localStorage.setItem('name', name.value);
-        localStorage.setItem('pw', pw.value);
-        alert('Your account has been created');
     }
 }
 
-//checking
-function check(){
-    var storedName = localStorage.getItem('name');
-    var storedPw = localStorage.getItem('pw');
-
-    var userName = document.getElementById('userName');
-    var userPw = document.getElementById('userPw');
-    var userRemember = document.getElementById("rememberMe");
-
-    if(userName.value == storedName && userPw.value == storedPw){
-        alert('You are logged in.');
-    }else{
-        alert('Error on login');
-    }
-}
 // login page
 
-// loginButton = document.querySelector("#login-button");
-// //click on sign in buttom
-// loginButton.addEventListener('click', signInOperation);
-// //sign in operation
-// async function signInOperation  (e) {
-//     e.preventDefault();
-//     //define variable
-//     const email = document.querySelector("#login-email").value;
-//     const password = document.querySelector("#login-password").value;
+loginButton = document.querySelector("#login-button");
+//click on sign in buttom
+loginButton.addEventListener('click', signInOperation);
+//prevent refresh
+loginForm = document.getElementById("loginform");
+loginForm.addEventListener("submit", function (evt) {
+    evt.preventDefault();
+});
+//sign in operation
+async function signInOperation  () {
+    //define variable
+    const email = document.querySelector("#login-email").value;
+    const password = document.querySelector("#login-password").value;
 
-//     const url = "http://localhost/twitter-clone/backend/login.php";
+    const url = "http://localhost/twitter-clone/backend/login.php";
 
-//     let parameters = {
-//         method:'POST',
-//         body: new URLSearchParams({
-//             email:email,
-//             password:password
-//         })
-//     }
-//     await fetch(url,parameters)
-//         .then(response=>response.json())
-//         .then(data => console.log(data))
-//         .catch(err => console.log(err));
+    let parameters = {
+        method:'POST',
+        body: new URLSearchParams({
+            email:email,
+            password:password
+        })
+    }
+    await fetch(url,parameters)
+        .then(response=>response.json())
+        .then(data => {
+            console.log(data);
+            const userId = data.id
+            localStorage.setItem('userId', userId);
+            // localStorage.setItem('pw', pw.value);
+        })
+        .catch(err => console.log(err));
         
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function store(){
+
+//     var name = document.getElementById('name');
+//     var pw = document.getElementById('pw');
+//     var lowerCaseLetters = /[a-z]/g;
+//     var upperCaseLetters = /[A-Z]/g;
+//     var numbers = /[0-9]/g;
+
+//     if(name.value.length == 0){
+//         alert('Please fill in email');
+
+//     }else if(pw.value.length == 0){
+//         alert('Please fill in password');
+
+//     }else if(name.value.length == 0 && pw.value.length == 0){
+//         alert('Please fill in email and password');
+
+//     }else if(pw.value.length > 8){
+//         alert('Max of 8');
+
+//     }else if(!pw.value.match(numbers)){
+//         alert('please add 1 number');
+
+//     }else if(!pw.value.match(upperCaseLetters)){
+//         alert('please add 1 uppercase letter');
+
+//     }else if(!pw.value.match(lowerCaseLetters)){
+//         alert('please add 1 lovercase letter');
+
+//     }else{
+//         localStorage.setItem('name', name.value);
+//         localStorage.setItem('pw', pw.value);
+//         alert('Your account has been created');
+//     }
 // }
 
+// //checking
+// function check(){
+//     var storedName = localStorage.getItem('name');
+//     var storedPw = localStorage.getItem('pw');
 
+//     var userName = document.getElementById('userName');
+//     var userPw = document.getElementById('userPw');
+//     var userRemember = document.getElementById("rememberMe");
 
-
+//     if(userName.value == storedName && userPw.value == storedPw){
+//         alert('You are logged in.');
+//     }else{
+//         alert('Error on login');
+//     }}
