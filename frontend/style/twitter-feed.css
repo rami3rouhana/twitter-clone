@@ -69,7 +69,6 @@ svg{
     padding: 10px 20px 10px 20px;
     margin-left: 2rem;
     margin-bottom: 1rem;
-    
 }
 
 .navbar-top-buttons button:hover{
@@ -191,7 +190,7 @@ svg{
 
 .image-upload svg {
     width: 25px;
-  }
+}
 
 .image-upload label{
     display: flex;
@@ -200,7 +199,7 @@ svg{
 
 .file-input{
     display: none;
-  }
+}
 
 .posts{
     display: flex;
@@ -244,6 +243,33 @@ svg{
     margin: 20px 0px 20px 0px;
 }
 
+.delete-post{
+    height:1.5rem;
+    margin-right:1rem ;
+    background: none;
+    border:.2px rgb(211, 211, 211) solid;
+    border-radius: .2rem;
+}
+.delete-post:hover{
+    background: rgb(219, 219, 219);
+    cursor: pointer;
+    transition: .3s;
+
+}
+.delete-comment{
+    height:1.5rem;
+    margin-right:1rem ;
+    background: none;
+    border:.2px rgb(211, 211, 211) solid;
+    border-radius: .2rem;
+}
+.delete-comment:hover{
+    background: rgb(219, 219, 219);
+    cursor: pointer;
+    transition: .3s;
+
+}
+
 .post-action{
     width: 20px;
 }
@@ -268,10 +294,15 @@ svg{
     display: flex;
     flex-direction: row;
 }
+.comment-inputs{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
 .user-write-comment{
     width:20rem;
     height: 2rem;
     border: solid .5px rgb(167, 167, 167);
+    border-radius: .3rem;
 }
 .reply-btn{
     height: 35px;
@@ -283,6 +314,11 @@ svg{
     background-color: rgb(29, 155, 240);
     border: 0px;
     width: 4rem;
+}
+.reply-btn:hover{
+    cursor: pointer;
+    background-color: rgb(91, 189, 255);
+    transition: .3s;
 }
 
 .search-header{
