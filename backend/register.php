@@ -13,6 +13,9 @@ $last_name = $_POST["lname"];
 $email = $_POST["email"];
 $password = $_POST["password"];
 
+
+/* Secure password hash. */
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
 //check email if exixts
 $check_email = "SELECT email FROM users WHERE email='$email'";
 $email_result = mysqli_query($mysqli, $check_email);
@@ -28,7 +31,7 @@ else{
 
 //queries
 $query = $mysqli->prepare("INSERT INTO users(first_name,last_name,email,password) VALUES(?,?,?,?)");
-$query->bind_param("ssss", $first_name, $last_name, $email, $password);
+$query->bind_param("ssss", $first_name, $last_name, $email, $hashed_password);
 $query->execute();
 
 //response
