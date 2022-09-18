@@ -18,8 +18,10 @@ export const UserInfo = async (postId) => {
         const resData = await res.json();
         document.getElementById("userImage").src = "../backend/"+resData[0].profile;
         document.getElementById("tweetImage").src = "../backend/"+resData[0].profile;
+        document.getElementById("profile-image").src = "../backend/"+resData[0].profile;
         document.getElementById("userName").innerHTML = resData[0].first_name + " " + resData[0].last_name;
         document.getElementById("userEmail").innerHTML = resData[0].email;
+        document.getElementById("profile-image")
         } catch (error) {
         console.log(error)
     }
