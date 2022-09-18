@@ -28,8 +28,7 @@ while ($a = $array->fetch_assoc()) {
     $response[] = $a;
 }
 //convert the into json object
-$json = json_encode($response);
-echo $json;
+echo json_encode($response);
 
 
 
